@@ -41,7 +41,7 @@ public class EmpDao {
                 int salary = rs.getInt(8);
 
                 // dto 생성 및 리스트에 담기
-                list.add(new EmpDTO(empId, empName, salary));
+                list.add(new EmpDTO(empId, empName, salary,""));
             }
 
         } catch (SQLException e) {
@@ -68,11 +68,11 @@ public class EmpDao {
                 int salary = rs.getInt(8);
 
                 // 한명의 사원 정보를 반환
-                return new EmpDTO(empId, empName, salary);
+                return new EmpDTO(empId, empName, salary, "");
             }
 
         } catch (Exception e) {
-
+            e.printStackTrace();
         }
         return emp;
     }

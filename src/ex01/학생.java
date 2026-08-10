@@ -39,7 +39,6 @@ public class 학생 {
     //print함수가 호출될때 실행
     @Override
     public String toString() {
-        // TODO Auto-generated method stub
         // return super.toString();
         // return 학교 + "/" + 이름 + "/"+ 나이;
 

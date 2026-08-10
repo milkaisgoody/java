@@ -48,7 +48,7 @@ public class App {
                 String empName = rs.getString(2);
                 int salary = rs.getInt(8); //8대신 "SALARY" 써도됨
                 
-                EmpDTO emp = new EmpDTO(empId, empName, salary);
+                EmpDTO emp = new EmpDTO(empId, empName, salary,"");
                 //리스트에 데이터를 추가
                 list.add(emp);
                 //System.out.println("%s %s %s".formatted(empId, empName, salary));
