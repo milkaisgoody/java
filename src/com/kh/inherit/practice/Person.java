@@ -1,6 +1,6 @@
 package com.kh.inherit.practice;
 
-public class Person {
+public class Person extends Object{
     protected String name;
     private int age;
     private double height;
@@ -11,6 +11,17 @@ public class Person {
         this.age = age;
         this.height = height;
         this.weight = weight;
+    }
+
+    @Override
+    public String toString() {
+        
+        return """
+                이름 : %s
+                나이 : %d
+                키 :  %f
+                몸무게 : %f 
+                """.formatted(name, age, height,weight);
     }
 
     public String information(){

@@ -14,6 +14,15 @@ public class Student extends Person{
     }
 
     @Override
+    public String toString() {
+        
+        return super.toString() + """
+                학년 : %d
+                전공 : %s
+                """.formatted(grade, major);
+    }
+
+    @Override
     public String information(){
         return super.information() + " 학년: " + grade + " 전공: " + major + "\n";
     }
