@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,9 +40,13 @@ public class EmpDao {
                 String empId = rs.getString(1);
                 String empName = rs.getString(2);
                 int salary = rs.getInt(8);
+                //입사일 
+                LocalDate hireDate = rs.getDate("hire_date").toLocalDate();
+                //퇴사일
+                String entDate = rs.getString("ent_Date");
 
                 // dto 생성 및 리스트에 담기
-                list.add(new EmpDTO(empId, empName, salary,""));
+                list.add(new EmpDTO(empId, empName, salary,"", hireDate, entDate));
             }
 
         } catch (SQLException e) {
@@ -110,7 +115,7 @@ public class EmpDao {
                 con.commit();
             }
         } catch (Exception e) {
-
+            e.printStackTrace();
         }
 
         return res;
